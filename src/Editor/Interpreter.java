@@ -3,6 +3,8 @@ package Editor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Interpreter {
 	private int progPoint;
 	private int arrayPoint;
@@ -67,29 +69,34 @@ public class Interpreter {
 				break;
 			case '>':
 				// Go as big as you want
-				arrayPoint++;
-				if (a.size() >= arrayPoint) {
+				if (a.size() >= arrayPoint + 2) {
+					arrayPoint++;
+				}else {
 					a.add(0);
+					arrayPoint++;
 				}
 				break;
 			case '.':
 				// I dont like where this is going.............
-
-				Scanner input = new Scanner(System.in);
-				String tempA = input.next();
+				
+				String tempA = JOptionPane.showInputDialog(null, "Enter an Character", "Input");
 
 				// NOW TO CHARACTER and no that was not caps lock
-				Character tempB = tempA.charAt(0);
+				char tempB = tempA.charAt(0);
+				
+				int tempC = tempB;
 
-				// Converts it to ascii
-				a.set(arrayPoint, Character.getNumericValue(tempB));
+				// Converts it to ASCII
+				a.set(arrayPoint, tempC);
 
 				break;
 			case ',':
 				// Yay ascii conversion is easy
 				int temp = (int) a.get(arrayPoint);
+				
 				char tempChar = (char) temp;
-				Editor.setOutputBox(null, tempChar);
+				
+				Editor.setOutputBoxChar(tempChar);
 				break;
 			case '+':
 				// Addition?
@@ -125,7 +132,7 @@ public class Interpreter {
 		try {
 			// Well this causes an issue but we fixed it with 2 levels of not caring anymore
 			// and wanting this to be over...
-			Editor.setOutputBox(a, (Character) null);
+			Editor.setOutputBoxStr(a);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

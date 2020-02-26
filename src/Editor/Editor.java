@@ -68,7 +68,6 @@ public class Editor {
 
 	private void initialize() {
 		frame = new JFrame();
-		frame.setAlwaysOnTop(true);
 		frame.setForeground(Color.DARK_GRAY);
 		frame.setBackground(Color.DARK_GRAY);
 		frame.addWindowListener(new WindowAdapter() {
@@ -314,17 +313,23 @@ public class Editor {
 
 	// Ok this is going to be used to access the output bod from inside the
 	// intrepeterthing im too tired for this...
-	public static void setOutputBox(ArrayList<Integer> a, char tempChar) {
+	public static void setOutputBoxStr(ArrayList<Integer> a) {
 		// Pretty easy...
 		String str = "";
-		// This is sloppy but it works
-		if (a != null) {
-			str = a.toString();
-		} else {
-			str = Character.toString(tempChar);
-		}
+		str = a.toString();
 		Output.append(
-				"---------------------------------------------------------------------------------------------\n");
+				"\n---------------------------------------------------------------------------------------------\n");
+		Output.append(str);
+	}
+
+	public static void setOutputBoxChar(char tempChar) {
+		// Pretty easy...
+		String str = "";
+
+		str = Character.toString(tempChar);
+
+		Output.append(
+				"\n---------------------------------------------------------------------------------------------\n");
 		Output.append(str);
 	}
 
