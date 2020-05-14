@@ -100,15 +100,15 @@ public class Editor {
 		textArea.setText(
 				"Hi, welcom to the interpreter to a language i cant even tell you the name of without cursing.\n");
 		textArea.append(
-				"And oh boy is it accurate. And well the name you may ask. ITs Brain and somthing that ryms with duck...\n");
+				"And oh boy is it accurate. And well the name you may ask. It's Brain and somthing that ryms with duck...\n");
 		textArea.append("So here are the rules.\n");
-		textArea.append("> Moves you to the righ\n");
+		textArea.append("> Moves you to the right\n");
 		textArea.append(
 				"< moves you to the left until you hit 0 in the array. oh yeah you have 1 array to work with from 0 to 255. good luck.\n");
 		textArea.append("+ Adds 1 to what ever your pointer is on\n");
 		textArea.append("- Does the opposate of addition\n");
 		textArea.append("[ Starts a loop\n");
-		textArea.append("] ends a loop only if the opinter it checks is = 0. yeah figure that on out huh...\n");
+		textArea.append("] ends a loop only if the pointer it checks is = 0. yeah figure that on out huh...\n");
 		textArea.append(
 				". Well you enter what ever you want but all ur gonna get is hot garbage so just enter some ascii letter or sum and that will put it in your array\n");
 		textArea.append(", displays what ever your pointing to in ascii...\n");
